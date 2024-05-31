@@ -1,0 +1,13 @@
+body{
+    background-color: #23252C;
+}
+.linkAgents{
+    height: 150px;
+    background-image: center;
+    background-position: center;
+    background-size: cover;
+    /* Pour le title de l'agent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
