@@ -13,22 +13,22 @@ data.forEach(agents => {
         let rowElement = document.querySelector("#rowElement");
 
         let colElement = document.createElement('div');
-        colElement.classList.add('col-lg-3', 'col-6', 'mb-4');
+        colElement.classList.add('col-lg-3', 'col-6');
         rowElement.appendChild(colElement);
 
-        let borderElement = document.createElement('div');
-        borderElement.className = ('borderAgents');
-        colElement.appendChild(borderElement);
+        let bgiElement = document.createElement('div');
+        bgiElement.className = ('bgiElement');
+        colElement.appendChild(bgiElement);
 
         let linkElement = document.createElement('a');
-        linkElement.setAttribute('href', `https://valorant-api.com/v1/agents/${agents.uuid}`);
+        linkElement.setAttribute('href', '#');
+        linkElement.style.backgroundImage = `url(${agents.killfeedPortrait})`;
         linkElement.className = ("linkAgents");
-        linkElement.style.backgroundImage = `url(${agents.displayIcon})`;
-        borderElement.appendChild(linkElement);
+        bgiElement.appendChild(linkElement);
 
         let titleElement = document.createElement('h2');
+        titleElement.className = ("h2-link")
         titleElement.textContent = (agents.displayName);
-        titleElement.className = ("titleAgents")
         linkElement.appendChild(titleElement);
 
     }
