@@ -1,13 +1,37 @@
 body{
     background-color: #23252C;
+    color: #f1f1f1;
+}
+a{
+    color: #f1f1f1;
+    text-decoration: none;
+}
+/* Card Agents Valorant */
+.borderAgents{
+    border: black 3px solid;
+    box-shadow: 0 4px 7px rgb(0, 0, 0);
+    border-radius: 10px;
 }
 .linkAgents{
-    height: 150px;
-    background-image: center;
+    height: 250px;
+    max-height: 300px;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
     /* Pour le title de l'agent */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items:end;
+}
+.linkAgents:hover{
+    background-color: #535766;
+}
+.titleAgents{
+    font-weight: 600;
+    margin: 0;
+    background-color: #f1f1f1;
+    color: #23252C;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 5px;
+    padding: 2px 20px;
 }

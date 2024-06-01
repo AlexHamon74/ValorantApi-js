@@ -13,14 +13,18 @@ data.forEach(agents => {
         let rowElement = document.querySelector("#rowElement");
 
         let colElement = document.createElement('div');
-        colElement.classList.add('col-lg-3', 'col-md-6', 'colAgents', 'mb-5');
+        colElement.classList.add('col-lg-3', 'col-6', 'mb-4');
         rowElement.appendChild(colElement);
 
+        let borderElement = document.createElement('div');
+        borderElement.className = ('borderAgents');
+        colElement.appendChild(borderElement);
+
         let linkElement = document.createElement('a');
-        linkElement.setAttribute('href', 'test');
+        linkElement.setAttribute('href', `https://valorant-api.com/v1/agents/${agents.uuid}`);
         linkElement.className = ("linkAgents");
         linkElement.style.backgroundImage = `url(${agents.displayIcon})`;
-        colElement.appendChild(linkElement);
+        borderElement.appendChild(linkElement);
 
         let titleElement = document.createElement('h2');
         titleElement.textContent = (agents.displayName);
@@ -28,5 +32,4 @@ data.forEach(agents => {
         linkElement.appendChild(titleElement);
 
     }
-
 });
