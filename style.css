@@ -6,7 +6,42 @@ a{
     color: #f1f1f1;
     text-decoration: none;
 }
-/* Card Agents Valorant */
+.nav-link{
+    color: #f1f1f1;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0 5px;
+}
+.h2-link{
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* STYLE PAGE INDEX */
+.index-link{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 250px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.308);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.index-link-agents{
+    background-image: url(https://www.mandatory.gg/wp-content/uploads/valorant-database-agents-illustration.jpg);
+}
+.index-link-maps{
+    background-image: url(https://www.mandatory.gg/wp-content/uploads/valorant-database-maps-illustration.jpg);
+}
+.index-link-weapons{
+    background-image: url(https://www.mandatory.gg/wp-content/uploads/valorant-database-weapons-illustration.jpg);
+}
+
+
+/* STYLE PAGE AGENTS */
 .borderAgents{
     border: black 3px solid;
     box-shadow: 0 4px 7px rgb(0, 0, 0);
