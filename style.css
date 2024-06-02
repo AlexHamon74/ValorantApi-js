@@ -74,3 +74,20 @@ a{
     border-radius: 4px;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.308);
 }
+
+/* STYLE PAGE ARMES */
+.colElementArmes{
+    padding: 0;
+}
+.borderElementArmes{
+    border: #f1f1f1 1px solid;
+    height: 400px;
+    background-color: #373A42;
+    padding: 50px;
+}
+.borderElementArmes img{
+    max-height: 150px;
+    max-width: 600px;
+    display: flex;
+    margin: 40px auto;
+}
