@@ -91,3 +91,15 @@ a{
     display: flex;
     margin: 40px auto;
 }
+
+/* STYLE PAGE AGENT DETAILS */
+.agentImg{
+    width: 100%;
+}
+.flexDiv{
+    display: flex;
+    align-items: start;
+}
+.flexDiv img{
+    width: 5%;
+}

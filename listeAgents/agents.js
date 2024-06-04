@@ -1,5 +1,5 @@
 async function afficherAgents(){
-    let response = await fetch('https://valorant-api.com/v1/agents');
+    let response = await fetch('https://valorant-api.com/v1/agents?language=fr-FR');
     response = await response.json();
     return response;
 }
@@ -7,7 +7,7 @@ let response = await afficherAgents();
 let data = response.data;
 
 data.forEach(agents => {
-
+    
     if(agents.isPlayableCharacter === true){
         
         let rowElement = document.querySelector("#rowElement");
@@ -21,7 +21,7 @@ data.forEach(agents => {
         colElement.appendChild(bgiElement);
 
         let linkElement = document.createElement('a');
-        linkElement.setAttribute('href', '#');
+        linkElement.setAttribute('href', `agent.html?uuid=${agents.uuid}`);
         linkElement.style.backgroundImage = `url(${agents.killfeedPortrait})`;
         linkElement.className = ("linkAgents");
         bgiElement.appendChild(linkElement);

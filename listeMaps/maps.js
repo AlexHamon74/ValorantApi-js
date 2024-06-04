@@ -1,5 +1,5 @@
 async function afficherMaps(){
-    let response = await fetch('https://valorant-api.com/v1/maps')
+    let response = await fetch('https://valorant-api.com/v1/maps?language=fr-FR')
     response = await response.json();
     return response;
 }

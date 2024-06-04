@@ -1,5 +1,5 @@
 async function afficherArmes(){
-    let response = await fetch('https://valorant-api.com/v1/weapons')
+    let response = await fetch('https://valorant-api.com/v1/weapons?language=fr-FR')
     response = await response.json();
     return response;
 }
