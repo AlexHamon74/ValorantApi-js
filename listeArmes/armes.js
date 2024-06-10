@@ -20,15 +20,15 @@ data.forEach(armes => {
     weaponsCard.className = ('weaponsCard');
     colElement.appendChild(weaponsCard);
 
-    //Weapons Icon
-    let weaponsIcon = document.createElement('div');
-    weaponsIcon.className = ('weaponsIcon');
-    weaponsCard.appendChild(weaponsIcon);
+    //Weapons bg
+    let weaponsBg = document.createElement('div');
+    weaponsBg.className = ('weaponsBg');
+    weaponsCard.appendChild(weaponsBg);
 
     let weaponsImg = document.createElement('img');
     weaponsImg.setAttribute('src', armes.displayIcon);
     weaponsImg.className = ('weaponsImg');
-    weaponsIcon.appendChild(weaponsImg);
+    weaponsBg.appendChild(weaponsImg);
 
     let weaponsName = document.createElement('h2');
     weaponsName.textContent = (armes.displayName + '.');
