@@ -17,6 +17,10 @@ a{
     font-weight: 700;
     text-transform: uppercase;
 }
+p{
+    padding: 0;
+    margin: 0;
+}
 
 /* STYLE PAGE INDEX */
 .index-link{
@@ -24,7 +28,7 @@ a{
     background-position: center;
     background-repeat: no-repeat;
     height: 250px;
-    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.308);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.800);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +48,7 @@ a{
 /* STYLE PAGE AGENTS */
 
 .agentsCard{
-    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.308);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.800);
     margin-bottom: 40px;
 }
 .topElement{
@@ -64,13 +68,11 @@ a{
     height: 220%;
     transition: 0.2s;
 }
-
 .bottomElement{
     background-color: #f1f1f1;
     overflow: hidden;
-    color: #23252C;
+    color: #0F1923;
 }
-
 
 
 /* STYLE PAGE MAPS */
@@ -84,7 +86,7 @@ a{
     align-items: center;
     margin-bottom: 40px;
     border-radius: 4px;
-    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.308);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.800);
 }
 
 /* STYLE PAGE ARMES */
@@ -94,7 +96,7 @@ a{
 .borderElementArmes{
     border: #f1f1f1 1px solid;
     height: 400px;
-    background-color: #373A42;
+    background-color: #19222D;
     padding: 50px;
 }
 .borderElementArmes img{
@@ -107,33 +109,44 @@ a{
 /* STYLE PAGE AGENT DETAILS */
 .agentImg{
     width: 100%;
+    object-fit: cover;
 }
-.flexDiv{
-    display: flex;
-    align-items: start;
+.borderRole{
+    border: 1px solid #FF4655;
+    padding: 10px;
+    width: 150px;
 }
-.flexDiv img{
-    width: 5%;
+.contentRole{
+    text-align: center;
+    padding: 10px;
+    background-color: #19222D;
+}
+.roleIcon{
+    width: 30%;
+    margin-bottom: 10px;
 }
 
+.bottom{
+    background-color: #19222D;
+}
 .abilitiesTitle{
     text-align: center;
-    font-size: 50px;
+    font-size: 44px;
     font-weight: 700;
     margin-bottom: 40px;
 }
 .abilitiesFlex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100px;
 }
 .abilitiesIcon{
     filter: brightness(50%);
     width: 50%;
-    object-fit: cover;
 }
 .abilitiesIcon:hover{
+    width: 60%;
     transition: 0.2s;
-    width: 55%;
 }

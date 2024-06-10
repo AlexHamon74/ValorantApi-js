@@ -19,33 +19,34 @@ let agentName = document.createElement('h1');
 agentName.textContent = (data.displayName);
 borderTopLeft.appendChild(agentName);  
 
-let role = document.createElement('h3');
-role.textContent = ('//ROLE');
-borderTopLeft.appendChild(role);
+let agentDescription = document.createElement('p');
+agentDescription.textContent = (data.description);
+agentDescription.className = ('my-4')
+borderTopLeft.appendChild(agentDescription);
 
-let flexDiv = document.createElement('div');
-flexDiv.className = ('flexDiv');
-borderTopLeft.appendChild(flexDiv);
+let borderRole = document.createElement('div');
+borderRole.className = ('borderRole');
+borderTopLeft.appendChild(borderRole);
 
-let agentRole = document.createElement('h2');
-agentRole.textContent = (data.role.displayName);
-flexDiv.appendChild(agentRole);
+let contentRole = document.createElement('div');
+contentRole.className = ('contentRole');
+borderRole.appendChild(contentRole);
 
 let roleIcon = document.createElement('img');
 roleIcon.setAttribute('src', data.role.displayIcon);
-flexDiv.appendChild(roleIcon);
+roleIcon.className = ('roleIcon');
+contentRole.appendChild(roleIcon);
 
-let agentRoleDescription = document.createElement('p');
-agentRoleDescription.textContent = (data.role.description);
-borderTopLeft.appendChild(agentRoleDescription);
+let role = document.createElement('p');
+role.textContent = ("Role");
+contentRole.appendChild(role);
 
-let description = document.createElement('h3');
-description.textContent = ('//BIOGRAPHIE');
-borderTopLeft.appendChild(description);
+let agentRole = document.createElement('p');
+agentRole.textContent = (data.role.displayName);
+agentRole.style.color = "#FF4655";
+contentRole.appendChild(agentRole);
 
-let agentDescription = document.createElement('p');
-agentDescription.textContent = (data.role.description);
-borderTopLeft.appendChild(agentDescription);
+
 
     //Right Col
 let agentImg = document.createElement('img');
@@ -57,6 +58,7 @@ borderTopRight.appendChild(agentImg);
 let borderBottomLeft = document.querySelector('#borderBottomLeft');
 let borderBottomRight = document.querySelector('#borderBottomRight');
 
+    //COL LEFT
 let abilitiesTitle = document.createElement('h2');
 abilitiesTitle.textContent = ('SPECIAL ABILITIES');
 abilitiesTitle.className = ('abilitiesTitle')
@@ -77,9 +79,21 @@ data.abilities.forEach(abilitie => {
     abilitiesIconDiv.appendChild(abilitiesIcon);
 
     abilitiesIcon.addEventListener('click', function(){
-        abilitiesIcon.style.filter = ('brightness(100%)')
+
+        document.querySelectorAll('.abilitiesIcon').forEach(icon => {
+            icon.style.filter = 'brightness(50%)';
+        });
+        abilitiesIcon.style.filter = 'brightness(100%)';
     })
-    
-    
+    let abilitiesName = document.createElement('h3');
+    abilitiesName.textContent = (abilitie.displayName);
+    borderBottomRight.appendChild(abilitiesName);
+
+    let abilitiesDesc = document.createElement('p');
+    abilitiesDesc.textContent = (abilitie.description);
+    borderBottomRight.appendChild(abilitiesDesc);
+
+
     });
+    
     
