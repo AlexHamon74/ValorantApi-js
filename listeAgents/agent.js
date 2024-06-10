@@ -69,31 +69,34 @@ abilitiesFlex.className = ('abilitiesFlex');
 borderBottomLeft.appendChild(abilitiesFlex);
 
 data.abilities.forEach(abilitie => {
-
     let abilitiesIconDiv = document.createElement('div');
     abilitiesFlex.appendChild(abilitiesIconDiv);
     
     let abilitiesIcon = document.createElement('img');
     abilitiesIcon.setAttribute('src', abilitie.displayIcon);
-    abilitiesIcon.className = ('abilitiesIcon');
+    abilitiesIcon.className = 'abilitiesIcon';
     abilitiesIconDiv.appendChild(abilitiesIcon);
 
-    abilitiesIcon.addEventListener('click', function(){
-
+    abilitiesIcon.addEventListener('click', function() {
+        // Réinitialiser la luminosité de toutes les icônes
         document.querySelectorAll('.abilitiesIcon').forEach(icon => {
             icon.style.filter = 'brightness(50%)';
         });
+        // Mettre en évidence l'icône cliquée
         abilitiesIcon.style.filter = 'brightness(100%)';
-    })
-    let abilitiesName = document.createElement('h3');
-    abilitiesName.textContent = (abilitie.displayName);
-    borderBottomRight.appendChild(abilitiesName);
 
-    let abilitiesDesc = document.createElement('p');
-    abilitiesDesc.textContent = (abilitie.description);
-    borderBottomRight.appendChild(abilitiesDesc);
+        // Effacer le contenu actuel de borderBottomRight
+        borderBottomRight.textContent = '';
 
+        // Afficher uniquement l'abilitie sélectionnée
+        let abilitiesName = document.createElement('h3');
+        abilitiesName.textContent = abilitie.displayName;
+        borderBottomRight.appendChild(abilitiesName);
 
+        let abilitiesDesc = document.createElement('p');
+        abilitiesDesc.textContent = abilitie.description;
+        borderBottomRight.appendChild(abilitiesDesc);
     });
+});
     
     

@@ -115,6 +115,10 @@ p{
     border: 1px solid #FF4655;
     padding: 10px;
     width: 150px;
+    margin-bottom: 80px;
+}
+#borderTopLeft{
+    border-bottom: #FF4655 1px solid;
 }
 .contentRole{
     text-align: center;
@@ -143,6 +147,7 @@ p{
     height: 100px;
 }
 .abilitiesIcon{
+    cursor: pointer;
     filter: brightness(50%);
     width: 50%;
 }
