@@ -12,24 +12,41 @@ data.forEach(agents => {
         
         let rowElement = document.querySelector("#rowElement");
 
-        let colElement = document.createElement('div');
-        colElement.classList.add('col-lg-3', 'col-6');
-        rowElement.appendChild(colElement);
+        //DIV COL
+        let colAgents = document.createElement('div');
+        colAgents.classList.add('col-lg-3', 'col-6');
+        rowElement.appendChild(colAgents);
 
-        let bgiElement = document.createElement('div');
-        bgiElement.className = ('bgiElement');
-        colElement.appendChild(bgiElement);
+        // LIEN A
+        let linkAgents = document.createElement('a');
+        linkAgents.setAttribute('href', `agent.html?uuid=${agents.uuid}`);
+        colAgents.appendChild(linkAgents);
 
-        let linkElement = document.createElement('a');
-        linkElement.setAttribute('href', `agent.html?uuid=${agents.uuid}`);
-        linkElement.style.backgroundImage = `url(${agents.killfeedPortrait})`;
-        linkElement.className = ("linkAgents");
-        bgiElement.appendChild(linkElement);
+        //DIV CARD
+        let agentsCard = document.createElement('div');
+        agentsCard.className = ('agentsCard');
+        linkAgents.appendChild(agentsCard);
 
-        let titleElement = document.createElement('h2');
-        titleElement.className = ("h2-link")
-        titleElement.textContent = (agents.displayName);
-        linkElement.appendChild(titleElement);
+        //DIV TOP
+        let topElement = document.createElement('div');
+        topElement.className = ('topElement');
+        agentsCard.appendChild(topElement);
+
+        let agentsImg = document.createElement('img');
+        agentsImg.setAttribute('src', agents.fullPortraitV2);
+        agentsImg.className = ('agentsImg')
+        topElement.appendChild(agentsImg);
+
+        //DIV BOTTOM
+        let bottomElement = document.createElement('div');
+        bottomElement.className = ('bottomElement');
+        agentsCard.appendChild(bottomElement);
+
+        let AgentsTitle = document.createElement('h2');
+        AgentsTitle.textContent = (agents.displayName);
+        bottomElement.appendChild(AgentsTitle);
+
+
 
     }
 });

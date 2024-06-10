@@ -1,5 +1,5 @@
 body{
-    background-color: #23252C;
+    background-color: #0F1923;
     color: #f1f1f1;
 }
 a{
@@ -42,24 +42,36 @@ a{
 
 
 /* STYLE PAGE AGENTS */
-.bgiElement{
-    background-image: url(https://www.mandatory.gg/wp-content/uploads/valorant-database-agents-illustration.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
+.agentsCard{
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.308);
+    margin-bottom: 40px;
 }
-.linkAgents{
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.topElement{
+    background-color: #19222D;
+    height: 350px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-    border-radius: 4px;
-    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.308);
+    border-radius: 5px;
 }
+.agentsImg{
+    object-fit: cover;
+    height: 200%;
+    margin-top: -80px;
+}
+.agentsImg:hover{
+    height: 220%;
+    transition: 0.2s;
+}
+
+.bottomElement{
+    background-color: #f1f1f1;
+    overflow: hidden;
+    color: #23252C;
+}
+
+
 
 /* STYLE PAGE MAPS */
 .linkMaps{
