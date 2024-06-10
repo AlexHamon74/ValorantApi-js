@@ -103,3 +103,25 @@ a{
 .flexDiv img{
     width: 5%;
 }
+
+.abilitiesTitle{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.abilitiesFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.abilitiesIcon{
+    filter: brightness(50%);
+    width: 50%;
+    object-fit: cover;
+}
+.abilitiesIcon:hover{
+    transition: 0.2s;
+    width: 55%;
+}

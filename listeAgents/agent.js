@@ -52,3 +52,34 @@ let agentImg = document.createElement('img');
 agentImg.setAttribute('src', data.fullPortraitV2);
 agentImg.className = ('agentImg');
 borderTopRight.appendChild(agentImg);
+
+//Row Bottom
+let borderBottomLeft = document.querySelector('#borderBottomLeft');
+let borderBottomRight = document.querySelector('#borderBottomRight');
+
+let abilitiesTitle = document.createElement('h2');
+abilitiesTitle.textContent = ('SPECIAL ABILITIES');
+abilitiesTitle.className = ('abilitiesTitle')
+borderBottomLeft.appendChild(abilitiesTitle);
+
+let abilitiesFlex = document.createElement('div');
+abilitiesFlex.className = ('abilitiesFlex');
+borderBottomLeft.appendChild(abilitiesFlex);
+
+data.abilities.forEach(abilitie => {
+
+    let abilitiesIconDiv = document.createElement('div');
+    abilitiesFlex.appendChild(abilitiesIconDiv);
+    
+    let abilitiesIcon = document.createElement('img');
+    abilitiesIcon.setAttribute('src', abilitie.displayIcon);
+    abilitiesIcon.className = ('abilitiesIcon');
+    abilitiesIconDiv.appendChild(abilitiesIcon);
+
+    abilitiesIcon.addEventListener('click', function(){
+        abilitiesIcon.style.filter = ('brightness(100%)')
+    })
+    
+    
+    });
+    
