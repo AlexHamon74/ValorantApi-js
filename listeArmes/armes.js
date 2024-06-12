@@ -12,7 +12,7 @@ data.forEach(armes => {
 
     //COL
     let colElement = document.createElement('div');
-    colElement.classList.add('col-lg-4');
+    colElement.classList.add('col-lg-4', 'col-md-6', 'col-12');
     rowElement.appendChild(colElement);
 
     //Weapons CARD
@@ -41,4 +41,31 @@ data.forEach(armes => {
     weaponsCategory.textContent = ('TYPES // ' + armes.shopData.categoryText);
     weaponsCard.appendChild(weaponsCategory);
 
+    let damageDiv = document.createElement('div');
+    damageDiv.className = ('damageDiv');
+    weaponsBg.appendChild(damageDiv);
+
+    armes.weaponStats.damageRanges.forEach(damage => {
+
+        let damageDivChild = document.createElement('div');
+        damageDivChild.className = ('mb-3');
+        damageDiv.appendChild(damageDivChild);
+
+        let damageMeters = document.createElement('h4');
+        damageMeters.className = ('damageMeters');
+        damageMeters.textContent = ('Distance : ' + damage.rangeStartMeters + 'm' + ' à ' + damage.rangeEndMeters + 'm');
+        damageDivChild.appendChild(damageMeters);
+
+        // Arrondir les valeurs de dégâts
+        let roundedHeadDamage = Math.round(damage.headDamage);
+        let roundedBodyDamage = Math.round(damage.bodyDamage);
+        let roundedLegDamage = Math.round(damage.legDamage);
+
+        let headDamage = document.createElement('p');
+        headDamage.className = ('damageFullBody');
+        headDamage.textContent = 
+        ('Tête :  -' + roundedHeadDamage + ' | ' + 'Corps :  -' + roundedBodyDamage + ' | ' + 'Jambes :  -' + roundedLegDamage);
+        damageDivChild.appendChild(headDamage);
+
+    });
 });
