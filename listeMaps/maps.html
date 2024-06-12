@@ -9,18 +9,28 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
+
+    <nav class="navbar navbar-expand-lg nav-bg">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <a href="../index.html"><img src="../img/logo.png" class="logo"></a>
+            <button class="navbar-toggler color-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon color-1"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-link" href="../index.html">Accueil</a>
-                    <a class="nav-link" href="maps.html">Maps</a>
-                    <a class="nav-link" href="../listeAgents/agents.html">Agents</a>
-                    <a class="nav-link" href="../listeArmes/armes.html">Armes</a>
-                </div>
+            <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNav">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link actif" href="maps.html">Maps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../listeAgents/agents.html">Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../listeArmes/armes.html">Armes</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

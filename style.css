@@ -6,12 +6,6 @@ a{
     color: #f1f1f1;
     text-decoration: none;
 }
-.nav-link{
-    color: #f1f1f1;
-    font-size: 20px;
-    text-transform: uppercase;
-    margin: 0 5px;
-}
 .h2-link{
     font-size: 40px;
     font-weight: 700;
@@ -25,6 +19,38 @@ h1{
     font-size: 78px;
     font-weight: 800;
 }
+
+/* NAVBAR */
+.nav-bg{
+    background-color: #19222D;
+}
+.nav-bg-2{
+    background-color: #E1DACD;
+}
+.logo{
+    width: 80px;
+}
+.nav-link{
+    color: #f1f1f1;
+    font-size: 16px;
+}
+.nav-link-2{
+    color: #0F1923;
+    font-size: 16px;
+}
+.nav-link:hover{
+    text-decoration: underline;
+    color: #f1f1f1;
+}
+.nav-link-2:hover{
+    text-decoration: underline;
+    color: #0F1923;
+}
+.actif{
+    text-decoration: underline;
+}
+
+
 /* STYLE PAGE INDEX */
 .index-link{
     background-size: cover;
@@ -93,9 +119,6 @@ h1{
 }
 
 /* STYLE PAGE ARMES */
-.nav-link-weapons{
-    color: #0F1923;
-}
 .bodyArmes{
     background-color: #ECE8E3;
     color: #0F1923;
