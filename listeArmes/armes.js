@@ -6,20 +6,6 @@ async function afficherArmes(){
 let response = await afficherArmes();
 let data = response.data;
 
-// Fonction pour afficher les armes en fonction du type
-function displayWeaponsByType(type) {
-    // Vide le contenu précédent
-    let rowElement = document.querySelector("#rowElement");
-    rowElement.innerHTML = '';
-
-    // Filtre et affiche les armes selon le type sélectionné
-    data.forEach(armes => {
-        if (type === 'all' || armes.shopData.categoryText === type) {
-            createWeaponCard(armes);
-        }
-    });
-}
-
 // Fonction pour créer la carte d'une arme
 function createWeaponCard(armes) {
     let rowElement = document.querySelector('#rowElement');
@@ -79,14 +65,21 @@ function createWeaponCard(armes) {
     });
 }
 
-// Fonction pour réinitialiser tous les filtres d'armes
-function resetWeaponsFilter() {
-    let weaponsSelect = document.querySelector('#weaponsSelect');
-    weaponsSelect.value = 'all';
-    displayWeaponsByType('all');
+// Fonction pour afficher les armes en fonction du type
+function displayWeaponsByType(type) {
+    // Vide le contenu précédent
+    let rowElement = document.querySelector("#rowElement");
+    rowElement.textContent = '';
+
+    // Filtre et affiche les armes selon le type sélectionné
+    data.forEach(armes => {
+        if (type === 'all' || armes.shopData.categoryText === type) {
+            createWeaponCard(armes);
+        }
+    });
 }
 
-// Fonction pour gérer le changement de sélection dans le menu déroulant
+//Fonction pour gérer le changement de sélection dans le menu déroulant
 document.querySelector('#weaponsSelect').addEventListener('change', function(event) {
     let selectedType = event.target.value;
     displayWeaponsByType(selectedType);
