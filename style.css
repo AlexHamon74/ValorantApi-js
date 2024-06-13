@@ -76,9 +76,32 @@ h1{
 
 /* STYLE PAGE AGENTS */
 
-.agentsCard{
-    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.800);
+.roleSearch{
+    display: flex;
+    justify-content: center;
     margin-bottom: 40px;
+}
+.roleSearchLogo{
+    border: #FF4655 1px solid;
+    padding: 5px;
+}
+.roleSearchLogo img{
+    width: 40px;
+    filter: brightness(50%);
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+.roleSearchLogo:hover img{
+    filter: brightness(100%);
+    cursor: pointer;
+}
+.roleSearchLogo img.active {
+    filter: brightness(100%);
+}
+
+.agentsCard{
+box-shadow: 0 4px 7px rgba(0, 0, 0, 0.800);
+margin-bottom: 40px;
 }
 .topElement{
     background-color: #19222D;
@@ -98,9 +121,19 @@ h1{
     transition: 0.2s;
 }
 .bottomElement{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: #f1f1f1;
     overflow: hidden;
     color: #0F1923;
+    height: 50px;
+}
+.bottomElement img{
+    height: 100%;
+    padding: 5px 0;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
 }
 
 
