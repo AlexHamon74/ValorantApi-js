@@ -6,21 +6,35 @@ async function afficherArmes(){
 let response = await afficherArmes();
 let data = response.data;
 
-data.forEach(armes => {
-    
+// Fonction pour afficher les armes en fonction du type
+function displayWeaponsByType(type) {
+    // Vide le contenu précédent
+    let rowElement = document.querySelector("#rowElement");
+    rowElement.innerHTML = '';
+
+    // Filtre et affiche les armes selon le type sélectionné
+    data.forEach(armes => {
+        if (type === 'all' || armes.shopData.categoryText === type) {
+            createWeaponCard(armes);
+        }
+    });
+}
+
+// Fonction pour créer la carte d'une arme
+function createWeaponCard(armes) {
     let rowElement = document.querySelector('#rowElement');
 
-    //COL
+    // COL
     let colElement = document.createElement('div');
     colElement.classList.add('col-lg-4', 'col-md-6', 'col-12');
     rowElement.appendChild(colElement);
 
-    //Weapons CARD
+    // Weapons CARD
     let weaponsCard = document.createElement('div');
     weaponsCard.className = ('weaponsCard');
     colElement.appendChild(weaponsCard);
 
-    //Weapons bg
+    // Weapons bg
     let weaponsBg = document.createElement('div');
     weaponsBg.className = ('weaponsBg');
     weaponsCard.appendChild(weaponsBg);
@@ -35,7 +49,6 @@ data.forEach(armes => {
     weaponsName.className = ('weaponsName');
     weaponsCard.appendChild(weaponsName);
 
-
     let weaponsCategory = document.createElement('h3');
     weaponsCategory.className = ('weaponsCategory');
     weaponsCategory.textContent = ('TYPES // ' + armes.shopData.categoryText);
@@ -46,7 +59,6 @@ data.forEach(armes => {
     weaponsBg.appendChild(damageDiv);
 
     armes.weaponStats.damageRanges.forEach(damage => {
-
         let damageDivChild = document.createElement('div');
         damageDivChild.className = ('mb-3');
         damageDiv.appendChild(damageDivChild);
@@ -56,16 +68,29 @@ data.forEach(armes => {
         damageMeters.textContent = ('Distance : ' + damage.rangeStartMeters + 'm' + ' à ' + damage.rangeEndMeters + 'm');
         damageDivChild.appendChild(damageMeters);
 
-        // Arrondir les valeurs de dégâts
         let roundedHeadDamage = Math.round(damage.headDamage);
         let roundedBodyDamage = Math.round(damage.bodyDamage);
         let roundedLegDamage = Math.round(damage.legDamage);
 
         let headDamage = document.createElement('p');
         headDamage.className = ('damageFullBody');
-        headDamage.textContent = 
-        ('Tête :  -' + roundedHeadDamage + ' | ' + 'Corps :  -' + roundedBodyDamage + ' | ' + 'Jambes :  -' + roundedLegDamage);
+        headDamage.textContent = ('Tête :  -' + roundedHeadDamage + ' | ' + 'Corps :  -' + roundedBodyDamage + ' | ' + 'Jambes :  -' + roundedLegDamage);
         damageDivChild.appendChild(headDamage);
-
     });
+}
+
+// Fonction pour réinitialiser tous les filtres d'armes
+function resetWeaponsFilter() {
+    let weaponsSelect = document.querySelector('#weaponsSelect');
+    weaponsSelect.value = 'all';
+    displayWeaponsByType('all');
+}
+
+// Fonction pour gérer le changement de sélection dans le menu déroulant
+document.querySelector('#weaponsSelect').addEventListener('change', function(event) {
+    let selectedType = event.target.value;
+    displayWeaponsByType(selectedType);
 });
+
+// Afficher toutes les armes au chargement de la page
+displayWeaponsByType('all');
