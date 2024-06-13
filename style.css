@@ -117,7 +117,7 @@ margin-bottom: 40px;
     margin-top: -60px;
 }
 .agentsImg:hover{
-    height: 220%;
+    transform: scale(1.1);
     transition: 0.2s;
 }
 .bottomElement{
@@ -270,12 +270,14 @@ margin-bottom: 40px;
     justify-content: space-evenly;
     height: 100px;
 }
-.abilitiesIcon{
+.abilitiesIcon {
     cursor: pointer;
     filter: brightness(50%);
-    width: 50%;
+    width: 80px;
 }
-.abilitiesIcon:hover{
-    width: 60%;
+
+.abilitiesIcon:hover,
+.abilitiesIcon.active {
     transition: 0.2s;
+    filter: brightness(100%);
 }

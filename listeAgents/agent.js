@@ -80,10 +80,11 @@ data.abilities.forEach(abilitie => {
     abilitiesIcon.addEventListener('click', function() {
         // Réinitialiser la luminosité de toutes les icônes
         document.querySelectorAll('.abilitiesIcon').forEach(icon => {
-            icon.style.filter = 'brightness(50%)';
+            icon.classList.remove('active');
         });
-        // Mettre en évidence l'icône cliquée
-        abilitiesIcon.style.filter = 'brightness(100%)';
+        
+        // Mettre en évidence l'icône cliquée en ajoutant la classe active
+        abilitiesIcon.classList.add('active');
 
         // Effacer le contenu actuel de borderBottomRight
         borderBottomRight.textContent = '';
@@ -98,5 +99,5 @@ data.abilities.forEach(abilitie => {
         borderBottomRight.appendChild(abilitiesDesc);
     });
 });
-    
+
     
