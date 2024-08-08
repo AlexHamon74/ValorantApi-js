@@ -9,6 +9,7 @@
 ## Contexte
 Dans le cadre de mon apprentissage de JavaScript, j’ai réalisé un projet de présentation du jeu Valorant.
 Mon objectif était d’afficher les données pour les cartes du jeu, les agents et les armes.
+Pour cela j'ai utilisé [Valorant API](https://valorant-api.com/).
 
 ## Développement
 J’ai donc réalisé une page d’accueil simple avec une redirection vers chacune de mes pages qui affichent les données que je souhaite.
